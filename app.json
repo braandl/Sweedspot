@@ -16,6 +16,9 @@
       "resizeMode": "contain",
       "backgroundColor": "#000000"
     },
+    "experiments": {
+      "baseUrl": "/sweedspot"
+    },
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "bra.an.dl.sweedspot"
