@@ -1,4 +1,4 @@
-package bra.ndl.legalme
+package bra.an.dl.sweedspot
 
 import android.app.Application
 import android.content.res.Configuration

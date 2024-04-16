@@ -1,4 +1,4 @@
-rootProject.name = 'legal-me'
+rootProject.name = 'sweedspot'
 
 dependencyResolutionManagement {
   versionCatalogs {

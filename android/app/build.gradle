@@ -83,9 +83,9 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace 'bra.ndl.legalme'
+    namespace 'bra.an.dl.sweedspot'
     defaultConfig {
-        applicationId 'bra.ndl.legalme'
+        applicationId 'bra.an.dl.sweedspot'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
