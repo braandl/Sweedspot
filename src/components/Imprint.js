@@ -1,12 +1,13 @@
 import { Component } from "react";
 import { Pressable, StyleSheet, Text, ScrollView, View } from "react-native";
 import Markdown from 'react-native-markdown-display';
-
 import * as Application from 'expo-application';
+
 export default class Imprint extends Component {
 
     constructor(props) {
         super(props);
+        console.log(Application)
         this.markdown =
             `
 # ${Application.applicationName}
@@ -17,17 +18,21 @@ allowed to consume any cannabis in germany.
 
 ## How does it work?
 
-The App queries you location from your local operating system,
+The ppp queries you location from your local operating system,
 and the open streetmap overpass api.
 Then your location will be checked with the overpass results.
-For your own safety, the inaccuracy of the GNSS Data will
+For your own safety, the inaccuracy of the GNSS data will
 be added to the required radius of 100 Meters.
+The app will now tell you, if you are within the range of 100m to
+any of the listed amenities.
 
 ## Is it relyable?
 
 Kind of, but I don't guarantee you anything.
+The resolution relies on the quality of the osm dataset
+and your GNSS accuracy.
 
-## What are your Query Parameters?
+## What are your query parameters?
 
 I borrowed the list of nominatim selectors from
 bubatzkarte.de,
@@ -46,7 +51,7 @@ They read as follows:
  nw/leisure=stadium nw/leisure=water_park
  nw/leisure=golf_course nw/leisure=indoor_play_
 
-# Imprint
+#ä Imprint
 
 ${Application.applicationName}
 c/o Block Services
@@ -54,7 +59,9 @@ Stuttgarter Str. 106
 70736 Fellbach
 
 
-_${Application.applicationName}:${Application.nativeApplicationVersion}
+### Current Version
+
+_${Application.applicationName}:${Application.nativeApplicationVersion}_
 `;
 
     }

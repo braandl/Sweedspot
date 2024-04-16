@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "sweedspot",
-    "slug": "find your sweedspot",
+    "slug": "find_your_sweedspot",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",

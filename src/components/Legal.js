@@ -1,10 +1,9 @@
 import { Component } from "react"
 import { connect } from "react-redux";
 import { LegalState } from "../classes/defs/legalstate";
-import { StyleSheet, View, Text, Pressable } from 'react-native';
+import { StyleSheet, View, Text } from 'react-native';
 import { ResizeMode, Video } from "expo-av";
 import Imprint from "./Imprint";
-import * as Location from 'expo-location';
 import { setLocation } from "../classes/store/location";
 
 
@@ -22,7 +21,8 @@ class Legal extends Component {
 
     _yesVid() {
         return (<Video
-            style={[styles.video]}
+            style={styles.video}
+            videoStyle={styles.video}
             source={require("../../assets/videos/smoke.mp4")}
             positionMillis={500}
             useNativeControls={false}
@@ -36,7 +36,8 @@ class Legal extends Component {
     _noVid() {
         return (
             <Video
-                style={[styles.video]}
+                style={styles.video}
+                videoStyle={styles.video}
                 source={require("../../assets/videos/nosmoke.mp4")}
                 positionMillis={500}
                 useNativeControls={false}
@@ -55,11 +56,6 @@ class Legal extends Component {
         }
     }
 
-    async refresh() {
-        let location = await Location.getCurrentPositionAsync({});
-        this.props.setLocation(location);
-    }
-
     render() {
         return this.state.showImprint ? <Imprint onClose={() => this.setState({ showImprint: false })} style={styles.container} /> : (
             <View style={[styles.container, this._styleFromLegalState()]}>
@@ -69,12 +65,6 @@ class Legal extends Component {
                 <View style={styles.infobox}>
                     {this._legalString()}
                 </View>
-
-                {/*
-                <Pressable style={styles.button} onPress={() => this.refresh()}>
-                    <Text style={styles.brightText}>refresh</Text>
-                </Pressable>
-                */}
 
                 <View style={styles.locationbox}>
                     <Text onPress={() => this.setState({ showImprint: true })} style={styles.brightText}>Your current location</Text>
@@ -103,10 +93,10 @@ const styles = StyleSheet.create({
     },
     video: {
         flex: 1,
+        zIndex: -1,
         position: 'absolute',
         width: "100%",
         height: "100%",
-        justifyContent: 'top',
         backgroundColor: '#000000'
     },
     center: {
