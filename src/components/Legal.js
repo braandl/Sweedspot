@@ -1,11 +1,11 @@
-import { Component } from "react"
-import { connect } from "react-redux";
-import { LegalState } from "../classes/defs/legalstate";
-import { StyleSheet, View, Text } from 'react-native';
 import { ResizeMode, Video } from "expo-av";
-import Imprint from "./Imprint";
-import { setLocation } from "../classes/store/location";
+import { Component } from "react"
+import { StyleSheet, Text, View } from 'react-native';
+import { connect } from "react-redux";
 
+import { LegalState } from "../classes/defs/legalstate";
+import { setLocation } from "../classes/store/location";
+import Imprint from "./Imprint";
 
 class Legal extends Component {
 
@@ -125,6 +125,7 @@ const styles = StyleSheet.create({
     locationbox: {
         height: 100,
         alignItems: 'center',
+        marginBottom: 25,
         justifyContent: 'flex-end',
     }
 });
