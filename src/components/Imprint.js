@@ -89,15 +89,15 @@ this.license =
 | expo-location                 | MIT          | git+https://github.com/expo/expo.git                             | 650 Industries, Inc.                                           |
 | expo-module-scripts           | MIT          | git+https://github.com/expo/expo.git                             | Expo                                                           |
 | expo-status-bar               | MIT          | git+https://github.com/expo/expo.git                             | 650 Industries, Inc.                                           |
-| react                         | MIT          | git+https://github.com/facebook/react.git                        | n/a                                                            |
-| react-app-polyfill            | MIT          | git+https://github.com/facebook/create-react-app.git             | n/a                                                            |
-| react-dev-utils               | MIT          | git+https://github.com/facebook/create-react-app.git             | n/a                                                            |
-| react-dom                     | MIT          | git+https://github.com/facebook/react.git                        | n/a                                                            |
-| react-native                  | MIT          | git+https://github.com/facebook/react-native.git                 | n/a                                                            |
+| react                         | MIT          | git+https://github.com/facebook/react.git                        | Facebook                                                            |
+| react-app-polyfill            | MIT          | git+https://github.com/facebook/create-react-app.git             | Facebook                                                             |
+| react-dev-utils               | MIT          | git+https://github.com/facebook/create-react-app.git             | Facebook                                                             |
+| react-dom                     | MIT          | git+https://github.com/facebook/react.git                        | Facebook                                                             |
+| react-native                  | MIT          | git+https://github.com/facebook/react-native.git                 | Facebook                                                             |
 | react-native-markdown-display | MIT          | git+https://github.com/iamacup/react-native-markdown-display.git | Mient-jan Stelling and Tom Pickard + others from the community |
 | react-native-web              | MIT          | git://github.com/necolas/react-native-web.git                    | Nicolas Gallagher                                              |
 | react-redux                   | MIT          | git+https://github.com/reduxjs/react-redux.git                   | Dan Abramov <dan.abramov@me.com> (https://github.com/gaearon)  |
-| react-refresh                 | MIT          | git+https://github.com/facebook/react.git                        | n/a                                                            |
+| react-refresh                 | MIT          | git+https://github.com/facebook/react.git                        | Facebook                                                            |
 | @babel/core                   | MIT          | https://github.com/babel/babel.git                               | The Babel Team (https://babel.dev/team)                        |
 `
 
