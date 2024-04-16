@@ -51,18 +51,55 @@ They read as follows:
  nw/leisure=stadium nw/leisure=water_park
  nw/leisure=golf_course nw/leisure=indoor_play_
 
-#ä Imprint
+## Assets
+
+Background videos are taken from
+https://pixabay.com/videos/ink-paint-water-acrylic-smoke-21536
+and
+https://pixabay.com/videos/ai-generated-man-rain-homeless-171181
+
+## Licenses
+
+
+
+## Imprint
 
 ${Application.applicationName}
 c/o Block Services
 Stuttgarter Str. 106
 70736 Fellbach
 
-
 ### Current Version
 
 _${Application.applicationName}:${Application.nativeApplicationVersion}_
 `;
+
+this.license =
+`
+
+## Open Source Licenses
+| Name                          | License type | Link                                                             | Author                                                         |
+| :---------------------------- | :----------- | :--------------------------------------------------------------- | :------------------------------------------------------------- |
+| @expo/metro-runtime           | MIT          | git+https://github.com/expo/expo.git                             | 650 Industries, Inc.                                           |
+| @reduxjs/toolkit              | MIT          | git+https://github.com/reduxjs/redux-toolkit.git                 | Mark Erikson <mark@isquaredsoftware.com>                       |
+| expo                          | MIT          | git+https://github.com/expo/expo.git                             | Expo                                                           |
+| expo-application              | MIT          | git+https://github.com/expo/expo.git                             | 650 Industries, Inc.                                           |
+| expo-asset                    | MIT          | git+https://github.com/expo/expo.git                             | 650 Industries, Inc.                                           |
+| expo-av                       | MIT          | git+https://github.com/expo/expo.git                             | 650 Industries, Inc.                                           |
+| expo-location                 | MIT          | git+https://github.com/expo/expo.git                             | 650 Industries, Inc.                                           |
+| expo-module-scripts           | MIT          | git+https://github.com/expo/expo.git                             | Expo                                                           |
+| expo-status-bar               | MIT          | git+https://github.com/expo/expo.git                             | 650 Industries, Inc.                                           |
+| react                         | MIT          | git+https://github.com/facebook/react.git                        | n/a                                                            |
+| react-app-polyfill            | MIT          | git+https://github.com/facebook/create-react-app.git             | n/a                                                            |
+| react-dev-utils               | MIT          | git+https://github.com/facebook/create-react-app.git             | n/a                                                            |
+| react-dom                     | MIT          | git+https://github.com/facebook/react.git                        | n/a                                                            |
+| react-native                  | MIT          | git+https://github.com/facebook/react-native.git                 | n/a                                                            |
+| react-native-markdown-display | MIT          | git+https://github.com/iamacup/react-native-markdown-display.git | Mient-jan Stelling and Tom Pickard + others from the community |
+| react-native-web              | MIT          | git://github.com/necolas/react-native-web.git                    | Nicolas Gallagher                                              |
+| react-redux                   | MIT          | git+https://github.com/reduxjs/react-redux.git                   | Dan Abramov <dan.abramov@me.com> (https://github.com/gaearon)  |
+| react-refresh                 | MIT          | git+https://github.com/facebook/react.git                        | n/a                                                            |
+| @babel/core                   | MIT          | https://github.com/babel/babel.git                               | The Babel Team (https://babel.dev/team)                        |
+`
 
     }
 
@@ -81,6 +118,14 @@ _${Application.applicationName}:${Application.nativeApplicationVersion}_
                         code_block: { color: '#f0f0f0', backgroundColor: '#000000' },
                         code_inline: { color: '#f0f0f0', backgroundColor: '#000000' }
                     }}>{this.markdown}</Markdown>
+                    <Markdown style={{
+                        body: { color: '#f0f0f0', backgroundColor: '#000000' },
+                        heading1: { color: '#f0f0f0', backgroundColor: '#000000' },
+                        code_block: { color: '#f0f0f0', backgroundColor: '#000000' },
+                        code_inline: { color: '#f0f0f0', backgroundColor: '#000000' }
+                    }}>
+                        {this.license}
+                    </Markdown>
                 </ScrollView>
             </View>
         )
