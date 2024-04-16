@@ -17,7 +17,7 @@
       "backgroundColor": "#000000"
     },
     "experiments": {
-      "baseUrl": "/sweedspot"
+      "baseUrl": "/sweedspot-web"
     },
     "ios": {
       "supportsTablet": true,
