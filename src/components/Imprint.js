@@ -74,8 +74,8 @@ Stuttgarter Str. 106
 _${Application.applicationName}:${Application.nativeApplicationVersion}_
 `;
 
-this.license =
-`
+        this.license =
+            `
 
 ## Open Source Licenses
 | Name                          | License type | Link                                                             | Author                                                         |
@@ -99,6 +99,7 @@ this.license =
 | react-redux                   | MIT          | git+https://github.com/reduxjs/react-redux.git                   | Dan Abramov <dan.abramov@me.com> (https://github.com/gaearon)  |
 | react-refresh                 | MIT          | git+https://github.com/facebook/react.git                        | Facebook                                                            |
 | @babel/core                   | MIT          | https://github.com/babel/babel.git                               | The Babel Team (https://babel.dev/team)                        |
+
 `
 
     }
@@ -136,8 +137,6 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         paddingTop: 50,
-        paddingBottom: 50,
-        flexShrink: 0,
         alignItems: 'center',
         width: "100%",
         height: "100%",
@@ -145,12 +144,10 @@ const styles = StyleSheet.create({
     },
     scrollContainer: {
         flex: 1,
-        flexShrink: 1,
         backgroundColor: '#000000',
     },
     backContainer: {
-        alignItems: 'center',
-        justifyContent: 'center',
+        alignItems: 'flex-end',
         height: 50,
     },
     back: {
