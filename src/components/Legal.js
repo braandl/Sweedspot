@@ -173,6 +173,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     appstore: {
+        width: 103,
+        height: 34,
         justifyContent: 'center',
         alignContent: 'center',
         margin: 10
