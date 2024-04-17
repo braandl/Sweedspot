@@ -167,7 +167,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     locationbox: {
-<<<<<<< HEAD
         flex: 1,
         zIndex: 2,
         top: 80,
@@ -177,12 +176,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignContent: 'center',
         margin: 10
-=======
-        height: 100,
-        alignItems: 'center',
-        marginBottom: 25,
-        justifyContent: 'flex-end',
->>>>>>> b02f3d7acacd34fe18469f33e27afaa88bc801c6
     }
 });
 
