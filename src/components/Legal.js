@@ -3,8 +3,9 @@ import { connect } from "react-redux";
 import { LegalState } from "../classes/defs/legalstate";
 import { StyleSheet, View, Text, Image, Platform, Linking, Pressable } from 'react-native';
 import { ResizeMode, Video } from "expo-av";
-import Imprint from "./Imprint";
+
 import { setLocation } from "../classes/store/location";
+import Imprint from "./Imprint";
 
 class Legal extends Component {
 
@@ -166,6 +167,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     locationbox: {
+<<<<<<< HEAD
         flex: 1,
         zIndex: 2,
         top: 80,
@@ -175,6 +177,12 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignContent: 'center',
         margin: 10
+=======
+        height: 100,
+        alignItems: 'center',
+        marginBottom: 25,
+        justifyContent: 'flex-end',
+>>>>>>> b02f3d7acacd34fe18469f33e27afaa88bc801c6
     }
 });
 
