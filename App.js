@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View } from 'react-native';
+import { Platform, StyleSheet, View } from 'react-native';
 import Legal from './src/components/Legal';
 import { Provider } from 'react-redux';
 import store from './src/classes/store/store'
@@ -11,8 +11,16 @@ export default function App() {
   return (
     <Provider store={store}>
       <View style={styles.container}>
-        <LocationProvider />
-        <Overpass />
+        {
+          Platform.OS != "web" ? (
+            <LocationProvider />
+          ) : null
+        }
+        {
+          Platform.OS != "web" ? (
+            <Overpass />
+          ) : null
+        }
         <Legal />
         <StatusBar style="auto" />
       </View>

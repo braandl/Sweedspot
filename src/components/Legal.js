@@ -1,11 +1,10 @@
 import { Component } from "react"
 import { connect } from "react-redux";
 import { LegalState } from "../classes/defs/legalstate";
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, Text, Image, Platform, Linking, Pressable } from 'react-native';
 import { ResizeMode, Video } from "expo-av";
 import Imprint from "./Imprint";
 import { setLocation } from "../classes/store/location";
-
 
 class Legal extends Component {
 
@@ -26,7 +25,7 @@ class Legal extends Component {
             source={require("../../assets/videos/smoke.mp4")}
             positionMillis={500}
             useNativeControls={false}
-            resizeMode={ResizeMode.COVER}
+            resizeMode={Platform.OS === "web" ? ResizeMode.COVER :  ResizeMode.CONTAIN}
             isLooping={true}
             isMuted={true}
             shouldPlay={true}
@@ -41,7 +40,7 @@ class Legal extends Component {
                 source={require("../../assets/videos/nosmoke.mp4")}
                 positionMillis={500}
                 useNativeControls={false}
-                resizeMode={ResizeMode.COVER}
+                resizeMode={ResizeMode.CONTAIN}
                 isLooping={true}
                 isMuted={true}
                 shouldPlay={true}
@@ -56,21 +55,57 @@ class Legal extends Component {
         }
     }
 
+    _getAppBanners() {
+        return (
+            <View>
+                <Pressable onPress={() => { Linking.openURL("https://google.de") }} >
+                    <Image style={styles.appstore} source={require('../../assets/gplay-badge.png')} />
+                </Pressable>
+                <Pressable onPress={() => { /*Linking.openURL("https://apple.de")*/ alert('coming soon') }} >
+                    <Image style={styles.appstore} source={require('../../assets/app-store-badge.png')} />
+                </Pressable>
+            </View>
+        )
+    }
+
     render() {
         return this.state.showImprint ? <Imprint onClose={() => this.setState({ showImprint: false })} style={styles.container} /> : (
             <View style={[styles.container, this._styleFromLegalState()]}>
 
                 {this.props.legalState === LegalState.legal ? this._yesVid() : this.props.legalState === LegalState.illegal ? this._noVid() : null}
 
-                <View style={styles.infobox}>
-                    {this._legalString()}
-                </View>
+                {
+                    (Platform.OS === "web") ?
+                        (
+                            <View style={styles.appbox}>
+                                {this._getAppBanners()}
+                            </View>
+                        )
+                        :
+                        (
+                            <View style={styles.infobox}>
+                                {this._legalString()}
+                            </View>
+                        )
+                }
 
-                <View style={styles.locationbox}>
-                    <Text onPress={() => this.setState({ showImprint: true })} style={styles.brightText}>Your current location</Text>
-                    <Text onPress={() => this.setState({ showImprint: true })} style={styles.brightText}>{this.props.location.coords.latitude},{this.props.location.coords.longitude}</Text>
-                    <Text onPress={() => this.setState({ showImprint: true })} style={[styles.brightText, {textDecoration: "underline"}]}>Open Info</Text>
-                </View>
+
+                {
+                    (Platform.OS === "web") ?
+                        (
+                            <View style={styles.locationbox}>
+                                <Text onPress={() => this.setState({ showImprint: true })} style={[styles.brightText, { textDecoration: "underline" }]}>Open Info</Text>
+                            </View>
+                        )
+                        :
+                        (
+                            <View style={styles.locationbox}>
+                                <Text onPress={() => this.setState({ showImprint: true })} style={styles.brightText}>Your current location</Text>
+                                <Text onPress={() => this.setState({ showImprint: true })} style={styles.brightText}>{this.props.location.coords.latitude},{this.props.location.coords.longitude}</Text>
+                                <Text onPress={() => this.setState({ showImprint: true })} style={[styles.brightText, { textDecoration: "underline" }]}>Open Info</Text>
+                            </View>
+                        )
+                }
             </View>
         )
     }
@@ -108,7 +143,8 @@ const styles = StyleSheet.create({
         backgroundColor: '#000000'
     },
     brightText: {
-        color: "#f0f0f0"
+        color: "#f0f0f0",
+        textAlign: "center"
     },
     button: {
         top: -67,
@@ -118,14 +154,27 @@ const styles = StyleSheet.create({
     },
     infobox: {
         top: "20%",
+        zIndex: 2,
         flex: 1,
         justifyContent: 'flex-start',
         alignContent: 'flex-end',
     },
+    appbox: {
+        zIndex: 2,
+        flex: 1,
+        top: 220,
+        justifyContent: 'center',
+    },
     locationbox: {
-        height: 100,
-        alignItems: 'center',
-        justifyContent: 'flex-end',
+        flex: 1,
+        zIndex: 2,
+        top: 80,
+        justifyContent: 'center',
+    },
+    appstore: {
+        justifyContent: 'center',
+        alignContent: 'center',
+        margin: 10
     }
 });
 
