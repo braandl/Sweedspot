@@ -59,11 +59,22 @@ class Legal extends Component {
     _getAppBanners() {
         return (
             <View>
-                <Pressable onPress={() => { Linking.openURL("https://google.de") }} >
+                <Pressable onPress={() => { Linking.openURL("https://play.google.com/store/apps/details?id=bra.an.dl.sweedspot") }} >
                     <Image style={styles.appstore} source={require('../../assets/gplay-badge.png')} />
                 </Pressable>
                 <Pressable onPress={() => { /*Linking.openURL("https://apple.de")*/ alert('coming soon') }} >
                     <Image style={styles.appstore} source={require('../../assets/app-store-badge.png')} />
+                </Pressable>
+            </View>
+        )
+    }
+
+    _getTesterInfo() {
+        return (
+            <View>
+                <Text style={styles.tester}>The App is currently in beta testing. Want to become a tester? Join the group, it's simple and free!</Text>
+                <Pressable onPress={() => { Linking.openURL("https://groups.google.com/g/sweedspot") }} >
+                    <Image style={styles.appstore} source={require('../../assets/googlegroups.jpg')} />
                 </Pressable>
             </View>
         )
@@ -80,6 +91,7 @@ class Legal extends Component {
                         (
                             <View style={styles.appbox}>
                                 {this._getAppBanners()}
+                                {this._getTesterInfo()}
                             </View>
                         )
                         :
@@ -161,10 +173,13 @@ const styles = StyleSheet.create({
         alignContent: 'flex-end',
     },
     appbox: {
-        zIndex: 2,
         flex: 1,
+        zIndex: 2,
         top: 220,
+        width: "100%",
         justifyContent: 'center',
+        alignContent: 'center',
+        alignSelf: 'center',
     },
     locationbox: {
         flex: 1,
@@ -177,7 +192,17 @@ const styles = StyleSheet.create({
         height: 34,
         justifyContent: 'center',
         alignContent: 'center',
+        alignSelf: 'center',
         margin: 10
+    },
+    tester: {
+        flex: 1,
+        fontWeight: 600,
+        fontSize: 20,
+        marginTop: 50,
+        marginBottom: 20,
+        textAlign: 'center',
+        color: 'white'
     }
 });
 
